@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section{
+    position: relative;
+    text-align: center;
+    height: 200vh;
+
+    animation-timeline: scroll(y) !important;
+}
+
+section article{
+    position: sticky;
+    top: 0%;
+    bottom: 100%;
+    height: 100vh;
+}
+
+section,
+section article,
+section article * {
+    animation-timeline: scroll(y) !important;
+    animation-range-start: var(--range-start) !important;
+    animation-range-end: var(--range-end) !important;
+}
+
+h1{
+    font-size: clamp(5px, 10vmin, 48px);
+}
+
+section#a1{
+    --range-start: 0pc;
+    --range-end: 100vh;
+    background-color: #3795BD;
+    color: white;
+
+    animation: section1animation linear 1s;
+}
+
+section#a1 article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes section1animation{
+    from {
+        background-color: black;
+    }
+
+    to{
+        background-color: #3795BD;
+    }
+}
+
+@keyframes animacionCubitos{
+    from {
+        height: 0px;
+        opacity: 1;
+    }
+
+    to{
+        height: 400px;
+        opacity: 0;
+    }
+}
+
+.row{
+    display: flex;
+    gap: 20px;
+}
+
+.element{
+    width: 200px;
+    height: 400px;
+    background: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    opacity: 0;
+    animation: animacionCubitos linear 1s;
+}
+
+section#a2 {
+    --range-start: 200vh;
+    --range-end: 500vh;
+    height: 400vh;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    background-color: #3795BD;
+    animation: section2animation linear 5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes section2animation{
+    from {
+        width: 100%;
+    }
+
+    50% {
+        width: 50%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+#textoAnimacion2{
+    width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.front , .back{
+    width: 200px;
+    height: 200px;
+}
+
+.front{
+    background-color: blue;
+}
+
+.back{
+    background-color: red;
+}
