@@ -71,7 +71,9 @@ section#a1 article{
 
 .row{
     display: flex;
+    justify-content: center;
     gap: 20px;
+    width: 100%;
 }
 
 .element{
