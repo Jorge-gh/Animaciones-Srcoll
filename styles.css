@@ -116,11 +116,19 @@ section#a2 {
     }
 }
 
+
+
 #textoAnimacion2{
     width: 600px;
     background-color: white;
     padding: 20px;
     border-radius: 20px;
+}
+
+section#a3{
+    --range-start: 600vh;
+    --range-end: 800vh;
+     height: 300vh;
 }
 
 .front , .back{
@@ -134,4 +142,39 @@ section#a2 {
 
 .back{
     background-color: red;
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+}
+
+
+#a3 article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    animation: section3animation linear;
+}
+
+@keyframes section3animation{
+    from {
+        transform: rotateY(0deg)
+    }
+
+    50% {
+        transform: rotateY(180deg)
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
 }
